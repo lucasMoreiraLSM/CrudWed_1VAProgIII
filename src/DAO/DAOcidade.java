@@ -98,7 +98,7 @@ public class DAOcidade {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		public List<Cidade> getCidadesByIdPesssoa  (int id) {
+		public List<Cidade> getCidadesById_pesssoa  (String id_pessoa) {
 			List<Cidade> listaDeCidade = new ArrayList<Cidade>();
 	        Cidade cid = new Cidade();
 	        try {
