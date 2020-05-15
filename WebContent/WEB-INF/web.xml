@@ -9,4 +9,54 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>CadastroServelet</display-name>
+    <servlet-name>CadastroServelet</servlet-name>
+    <servlet-class>Servelets.CadastroServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CadastroServelet</servlet-name>
+    <url-pattern>/CadastroServelet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeletarServelet</display-name>
+    <servlet-name>DeletarServelet</servlet-name>
+    <servlet-class>Servelets.DeletarServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeletarServelet</servlet-name>
+    <url-pattern>/DeletarServelet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditarServelet</display-name>
+    <servlet-name>EditarServelet</servlet-name>
+    <servlet-class>Servelets.EditarServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditarServelet</servlet-name>
+    <url-pattern>/EditarServelet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchCidadeServelet</display-name>
+    <servlet-name>SearchCidadeServelet</servlet-name>
+    <servlet-class>Servelets.SearchCidadeServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchCidadeServelet</servlet-name>
+    <url-pattern>/SearchCidadeServelet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchServelet</display-name>
+    <servlet-name>SearchServelet</servlet-name>
+    <servlet-class>Servelets.SearchServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchServelet</servlet-name>
+    <url-pattern>/SearchServelet</url-pattern>
+  </servlet-mapping>
 </web-app>
