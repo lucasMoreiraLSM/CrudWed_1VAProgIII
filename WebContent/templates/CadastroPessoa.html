@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Cadastro Pessoa</title>
+ <meta charset=""ISO-8859-1">
+<meta name="viewport" content="width=device=witdth, initial =scale=1.0">
+</head>
+<body>
+	<form  method="get">
+	<div id="informacoes">
+		<input type="hidden" name="idpessoa">
+		<input type="hidden" name="step" value="1">
+		<div id="tborda">Informações Pessoais</div>
+		<div id="borda">
+			<span class="img_1">
+				<div>
+					<label id="lbl_nome" for="lbl_nome">Nome: </label>
+					<div>
+						<input type="text" name="nome" id="nome" size="60px">
+					</div>
+				</div>
+				<div>
+					<label id="lbl_sexo" for="lbl_sexo">Sexo: </label>
+					<div>
+						<input type="radio" name="sexo" id="sexo" value="M"> <span
+							class="cinza arial">Masculino:</span>
+					</div>
+					<div>
+						<div>
+							<input type="radio" name="sexo" id="sexo" value="F"> <span
+								class="cinza arial">Feminino:</span>
+						</div>
+					</div>
+
+				</div>
+				<div>
+					<label id="lbl_nascimento" for="lbl_nascimento">Data
+						Nascimento:</label>
+					<div>
+						<input type="date" name="data_nascimento" id="data_nascimento">
+					</div>
+				</div>
+
+				<div>
+					<label id="lbl_cpf" for="lbl_cpf">CPF: </label>
+					<div>
+						<input type="text" name="cpf" id="cpf">
+					</div>
+				</div>
+				<div>
+					<label id="lbl_senha" for="lbl_senha">Senha inútil: </label>
+					<div>
+						<input type="password" name="senha" id="senha">
+					</div>
+				</div>
+		</div>
+
+		</span>
+
+		<div id="informacoes_end">
+
+			<div id="tborda">Informações de Endereço</div>
+			<div id="borda">
+				<span class="img_1">
+					<div>
+						<label id="lbl_rua" for="lbl_rua">Rua: </label>
+						<div>
+							<input type="text" name="end_rua" id="rua" size="80px">
+						</div>
+					</div>
+					<div>
+						<label id="lbl_bairro" for="lbl_bairo">Bairro:</label>
+						<div>
+							<input type="text" name="end_bairro" id="bairro" size="60">
+						</div>
+					</div>
+					<div>
+
+						<div>
+							<input type="checkbox" name="end_sn" id="sn" value="S"> <span
+								class="cinza arial">Sem Número</span>
+						</div>
+						<div>
+							<label id="lbl_n" for="lbl_sn">Número: </label>
+							<div>
+								<input type="number" name="end_numero" id="numero" min="0"> <span
+									class="cinza arial"></span>
+							</div>
+						</div>
+
+					</div>
+					<!-- <div id="opcoes">
+						<div id="tborda">Cidade</div>
+						<div id="borda">
+							<div>
+								<select name="id_cidade" id="opcoes">
+									<option value="">---</option>
+									<option value="1">Goiania</option>
+									<option value="2">Jussara</option>
+									<Option value="3">Anapolis</Option>
+								</select>
+							</div>
+						</div>
+					</div> -->
+					<div>
+						<label id="lbl_Complemento" for="lbl_Complemento">Complemento:
+						</label>
+						<div>
+							<textarea name="end_complemento" rows="4" cols="100"
+								maxlength="500">
+							</textarea>
+						</div>
+					</div>
+			</div>
+
+			</span>
+
+		</div>
+
+
+
+	</div>
+
+
+    <br><br><input type="button" value="Cancelar" onclick="window.location.href='http://localhost:8080/CrudWeb03Estudos//SearchServelet'" />
+	<input id="btnreset" type="submit" name="op" value="Próximo">
+	</div>
+
+
+
+	</div>
+	</div>
+
+
+	</form>
+</body>
+</html>
