@@ -55,6 +55,7 @@ public class SearchServelet extends HttpServlet {
 			stringToReplace += "<td style=\"border: 1px solid black;\">" +pessoa.getSenha() + "</td>";
 			stringToReplace += "<td style=\"border: 1px solid black;\">" +pessoa.getEnd_rua() + "</td>";
 			stringToReplace += "<td style=\"border: 1px solid black;\">" +pessoa.getEnd_bairro() + "</td>";
+			stringToReplace += "<td style=\"border: 1px solid black;\">" +pessoa.getEnd_numero() + "</td>";
 			stringToReplace += "<td style=\"border: 1px solid black;\">" +pessoa.getEnd_complemento() +"</td>";
 			stringToReplace += "<td style=\"border: 1px solid black;\"> <input type=\"button\" value=\"Edit\" onclick=\"window.location.href='http://localhost:8080/CrudWed_1VAProgIII/EditarServelet?id="+pessoa.getId()+"'\" /> </td>";
 			stringToReplace += "<td style=\"border: 1px solid black;\"> <input type=\"button\" value=\"Delete\" onclick=\"window.location.href='http://localhost:8080/CrudWed_1VAProgIII/DeletarServelet?id="+pessoa.getId()+"'\" /></td>";
