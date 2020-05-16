@@ -2,6 +2,10 @@ package Model;
 
 public class Cidade {
 	private int id_cidade;
+	private String nome;
+	private String estado;
+	private int id_pessoa;
+	
 	public int getId_cidade() {
 		return id_cidade;
 	}
@@ -9,11 +13,6 @@ public class Cidade {
 	public void setId_cidade(int id_cidade) {
 		this.id_cidade = id_cidade;
 	}
-
-	private String nome;
-	private String estado;
-	private int id_pessoa;
-
 	public int getId_pessoa() {
 		return id_pessoa;
 	}

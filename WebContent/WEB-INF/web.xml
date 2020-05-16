@@ -59,4 +59,22 @@
     <servlet-name>SearchServelet</servlet-name>
     <url-pattern>/SearchServelet</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>CadastroServeletFilter</display-name>
+    <filter-name>CadastroServeletFilter</filter-name>
+    <filter-class>Servelets.CadastroServeletFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CadastroServeletFilter</filter-name>
+    <servlet-name>CadastroServelet</servlet-name>
+  </filter-mapping>
+  <filter>
+    <display-name>EditServeletFilter</display-name>
+    <filter-name>EditServeletFilter</filter-name>
+    <filter-class>Servelets.CadastroServeletFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EditServeletFilter</filter-name>
+    <servlet-name>EditarServelet</servlet-name>
+  </filter-mapping>
 </web-app>

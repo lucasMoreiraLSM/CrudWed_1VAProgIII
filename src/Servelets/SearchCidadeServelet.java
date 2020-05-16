@@ -37,21 +37,25 @@ public class SearchCidadeServelet extends HttpServlet {
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out = response.getWriter();
 
+		
 		String html = fc.getFileFromDisk();
 		DAOcidade daocidade = new DAOcidade();
 		List<Cidade> cidadeList = null;
-		System.out.println(request.getParameter("id_pessoa"));
-			cidadeList = daocidade.getCidadeByIdPessoa(request.getParameter("id_pessoa"));
+		int id_pessoa = Integer.parseInt(request.getParameter("id_pessoa"));
+		String nome_pessoa= request.getParameter("nome_pessoa");
+		Cidade cid = daocidade.getCidadeById_pesssoa(id_pessoa);
 	
-		String stringToReplace = "";
-		for (Cidade cid : cidadeList) {
-			stringToReplace = stringToReplace + "<tr>";
-			stringToReplace += "<td style=\"border: 1px solid black;\">" + cid.getId_cidade() + "</td>";
-			stringToReplace += "<td style=\"border: 1px solid black;\">" + cid.getNome() + "</td>";
+		String stringToReplaice2 = "";
+		
+			stringToReplaice2 = stringToReplaice2 + "<tr>";
+			stringToReplaice2 += "<td style=\"border: 1px solid black;\">" + cid.getId_cidade() + "</td>";
+			stringToReplaice2 += "<td style=\"border: 1px solid black;\">" + cid.getNome() + "</td>";
+			stringToReplaice2 += "<td style=\"border: 1px solid black;\">" + cid.getEstado() + "</td>";
 					
-			stringToReplace = stringToReplace + "</tr>";
-		}
-		html = html.replace("<%%>", stringToReplace);
+			stringToReplaice2 = stringToReplaice2 + "</tr>";
+		
+		html = html.replace("<%1%>", nome_pessoa);
+		html = html.replace("<%2%>", stringToReplaice2);
 
 		out.println(html);
 	}

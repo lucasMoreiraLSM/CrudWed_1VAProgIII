@@ -81,7 +81,7 @@ public class DAOcidade {
 		return listaDeCidade;
 	}
 
-	public Cidade getCidadeById(int id, Cidade ListaDeCidade) {
+	public Cidade getCidadeById(int id) {
 		Cidade cidade = new Cidade();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement("select * from cidade where id_cidade=?");
@@ -91,36 +91,35 @@ public class DAOcidade {
 			if (rs.next()) {
 				cidade.setId_cidade(rs.getInt("id"));
 				cidade.setNome(rs.getString("nome"));
-				cidade.setEstado(rs.getString("estado"));
-				
+				cidade.setEstado(rs.getString("estado"));				
 
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+			
 		}
-		public List<Cidade> getCidadesById_pesssoa  (String id_pessoa) {
-			List<Cidade> listaDeCidade = new ArrayList<Cidade>();
-	        Cidade cid = new Cidade();
-	        try {
-	            PreparedStatement preparedStatement = connection.prepareStatement("select * from cidade where id_pessoa=?");
-	            preparedStatement.setInt(1, id);
-	            ResultSet rs = preparedStatement.executeQuery();
-
-	            if (rs.next()) {
-	            	cid.setId_cidade(rs.getInt("id_Cidade"));
-					cid.setNome(rs.getString("nome"));
-					cid.setEstado(rs.getString("estado"));
-					cid.setId_pessoa(rs.getInt("id_pessoa"));
-					
-					
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-
-	        return cid;
-	    }
-
-		return ListaDeCidade;
+		
+		return cidade;
+		
 	}
+	public Cidade getCidadeById_pesssoa  (int id_pessoa) {
+	Cidade cid = new Cidade();
+    try {
+        PreparedStatement preparedStatement = connection.prepareStatement("select * from cidade where id_pessoa=?");
+        preparedStatement.setInt(1, id_pessoa);
+        ResultSet rs = preparedStatement.executeQuery();
+
+        
+        if (rs.next()) {
+        	cid.setId_cidade(rs.getInt("id_Cidade"));
+			cid.setNome(rs.getString("nome"));
+			cid.setEstado(rs.getString("estado"));
+			cid.setId_pessoa(rs.getInt("id_pessoa"));
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return cid;
+}
 }

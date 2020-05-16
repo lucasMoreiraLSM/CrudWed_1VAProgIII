@@ -9,7 +9,7 @@
 <body>
 	<form  method="get">
 	<div id="informacoes">
-		<input type="hidden" name="idpessoa">
+		<input type="hidden" name="idpessoa" value="<%idpessoa%>">
 		<input type="hidden" name="step" value="1">
 		<div id="tborda">Informações Pessoais</div>
 		<div id="borda">
@@ -17,18 +17,18 @@
 				<div>
 					<label id="lbl_nome" for="lbl_nome">Nome: </label>
 					<div>
-						<input type="text" name="nome" id="nome" size="60px">
+						<input type="text" name="nome" id="nome" size="60px" value=" <%nome%> " >
 					</div>
 				</div>
 				<div>
 					<label id="lbl_sexo" for="lbl_sexo">Sexo: </label>
 					<div>
-						<input type="radio" name="sexo" id="sexo" value="M"> <span
+						<input type="radio" name="sexo" id="sexo" value="M" <%opm%> > <span
 							class="cinza arial">Masculino:</span>
 					</div>
 					<div>
 						<div>
-							<input type="radio" name="sexo" id="sexo" value="F"> <span
+							<input type="radio" name="sexo" id="sexo" value="F" <%opf%> > <span
 								class="cinza arial">Feminino:</span>
 						</div>
 					</div>
@@ -38,20 +38,20 @@
 					<label id="lbl_nascimento" for="lbl_nascimento">Data
 						Nascimento:</label>
 					<div>
-						<input type="date" name="data_nascimento" id="data_nascimento">
+						<input type="date" name="data_nascimento" id="data_nascimento" value="<%data_nascimento%>">
 					</div>
 				</div>
 
 				<div>
 					<label id="lbl_cpf" for="lbl_cpf">CPF: </label>
 					<div>
-						<input type="text" name="cpf" id="cpf">
+						<input type="text" name="cpf" id="cpf" value="<%cpf%>">
 					</div>
 				</div>
 				<div>
 					<label id="lbl_senha" for="lbl_senha">Senha inútil: </label>
 					<div>
-						<input type="password" name="senha" id="senha">
+						<input type="password" name="senha" id="senha" value="<%senha%>">
 					</div>
 				</div>
 		</div>
@@ -66,25 +66,25 @@
 					<div>
 						<label id="lbl_rua" for="lbl_rua">Rua: </label>
 						<div>
-							<input type="text" name="end_rua" id="rua" size="80px">
+							<input type="text" name="end_rua" id="rua" size="80px" value="<%end_rua%>">
 						</div>
 					</div>
 					<div>
 						<label id="lbl_bairro" for="lbl_bairo">Bairro:</label>
 						<div>
-							<input type="text" name="end_bairro" id="bairro" size="60">
+							<input type="text" name="end_bairro" id="bairro" size="60" value="<%end_bairro%>">
 						</div>
 					</div>
 					<div>
 
 						<div>
-							<input type="checkbox" name="end_sn" id="sn" value="S"> <span
+							<input type="checkbox" name="end_sn" id="sn" value="S" <%end_sn%> > <span
 								class="cinza arial">Sem Número</span>
 						</div>
 						<div>
 							<label id="lbl_n" for="lbl_sn">Número: </label>
 							<div>
-								<input type="number" name="end_numero" id="numero" min="0"> <span
+								<input type="number" name="end_numero" id="numero" min="0" value="<%end_numero%>" > <span
 									class="cinza arial"></span>
 							</div>
 						</div>
@@ -109,6 +109,7 @@
 						<div>
 							<textarea name="end_complemento" rows="4" cols="100"
 								maxlength="500">
+								<%end_complemento%>
 							</textarea>
 						</div>
 					</div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=""ISO-8859-1">
+<title>Cadastrando Cidade</title>
+</head>
+<body>
+	<h1>Editando Cidade De <%1%></h1>
+	<form method="POST">
+		<input name="id_cidade" type="hidden" value="<%id_cidade%>"> 
+		<input name="id_pessoa" type="hidden" value="<%id_pessoa%">
+		<h3>Digite o nome da Cidade</h3>
+		<br> <input name="nome_cidade" type="text" value="<%nome_cidade%>">
+		<h3>Digite o nome do Estado</h3>
+		<br> <input name="estado" type="text" value="<%estado%>">
+		<br><input  type="submit" name="enviar" value="Enviar">
+	</form>
+</body>
+</html>

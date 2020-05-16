@@ -39,7 +39,7 @@ public class CadastroServelet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException  {
 		
-		response.setContentType("text/html; charset=UTF-8");
+		response.setContentType("text/html; charset=ISO-8859-1");
 		PrintWriter out =  response.getWriter();
 	    if(request.getAttribute("step") == null || request.getAttribute("step") == "1"){
 	    	FileController fc = new FileController("CadastroPessoa.html",this.getServletContext().getRealPath(File.separator));
@@ -50,6 +50,7 @@ public class CadastroServelet extends HttpServlet {
 				e.printStackTrace();
 			}
 	    }else {
+	    	System.out.println("passou else casdastro servelet");
 
 	    	Pessoa p =  new Pessoa();
 	    	p.setNome(request.getParameter("nome"));
@@ -72,7 +73,8 @@ public class CadastroServelet extends HttpServlet {
 	    }
 	   FileController fc = new FileController("CadastroCidade.html",this.getServletContext().getRealPath(File.separator));
 		
-		
+	 
+
 	}
 
 	@Override
@@ -80,23 +82,21 @@ public class CadastroServelet extends HttpServlet {
 			throws ServletException, IOException {
 		PessoaController pc =  new PessoaController();
 		CidadeController cc =  new CidadeController();
-		String nome = request.getParameter("nome");
+		//String nome = request.getParameter("nome");
 		String estado = request.getParameter("estado");
 		Pessoa p = (Pessoa) request.getSession().getAttribute("pessoa");
-		
+		System.out.println("passou else do post cidade");
 		//pc.NovaPessoa(p);
 		p = pc.NovaPessoa(p);
 		
 		Cidade cid = new Cidade();
-		cid.setNome(request.getParameter("nome"));
+		cid.setNome(request.getParameter("nome_cidade"));
 		cid.setEstado(request.getParameter("estado"));
 		cid.setId_pessoa(p.getId());
 		cc.AddCidade(cid);
-		System.out.println(p.toString());
-		System.out.println(cid.toString());
-		System.out.println("bateu");
+		response.sendRedirect("http://localhost:8080/CrudWed_1VAProgIII/SearchServelet");
 		
-		// doGet(request, response);
+		doGet(request, response);
 	}
 
 }

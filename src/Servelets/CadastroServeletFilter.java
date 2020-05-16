@@ -40,7 +40,6 @@ public class CadastroServeletFilter implements Filter {
 		mandatoryFields.add("data_nascimento");
 		mandatoryFields.add("cpf");
 		mandatoryFields.add("senha");
-		
 		//--------------
 		for(String mandatoryField: mandatoryFields) {
 			if( req.getParameter(mandatoryField) == null || req.getParameter(mandatoryField) == "") {

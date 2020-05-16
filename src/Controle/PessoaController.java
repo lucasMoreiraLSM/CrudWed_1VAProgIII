@@ -11,4 +11,8 @@ public class PessoaController {
 		return p;
 	}
 
+	public void UpdatePessoa(Pessoa p) {
+		dao.updatePessoa(p);
+	}
+
 }
