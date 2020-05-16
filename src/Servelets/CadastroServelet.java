@@ -50,7 +50,7 @@ public class CadastroServelet extends HttpServlet {
 				e.printStackTrace();
 			}
 	    }else {
-	    	System.out.println("passou else casdastro servelet");
+	    	
 
 	    	Pessoa p =  new Pessoa();
 	    	p.setNome(request.getParameter("nome"));
