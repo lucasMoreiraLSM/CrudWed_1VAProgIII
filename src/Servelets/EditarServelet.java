@@ -68,20 +68,29 @@ public class EditarServelet extends HttpServlet {
 	    	html = html.replace("<%end_numero%>",p.getEnd_numero());
 	    	html = html.replace("<%end_complemento%>",p.getEnd_complemento());
 	    	
-	    	
-	    	
-	    	HttpSession session = request.getSession(true);
-	    	
-	    	session.setAttribute("pessoa", p);
 	 
 	    	out.println(html);
 	    } else {
+	    	Pessoa p =  new Pessoa();
+	    	p.setId(Integer.parseInt(request.getParameter("idpessoa")));
+	    	p.setNome(request.getParameter("nome"));
+	    	p.setSexo(request.getParameter("sexo"));
+	    	p.setData_nascimento(request.getParameter("data_nascimento"));
+	    	p.setCpf(request.getParameter("cpf"));
+	    	p.setSenha(request.getParameter("senha"));
+	    	p.setEnd_rua(request.getParameter("end_rua"));
+	    	p.setEnd_bairro(request.getParameter("end_bairro"));
+	    	p.setEnd_numero(request.getParameter("end_numero"));
+	    	p.setEnd_complemento(request.getParameter("end_complemento"));
+	    	
+	    	HttpSession session = request.getSession(true);
+	    	session.setAttribute("pessoa", p);
+	    	
 	    	FileController fc = new FileController("EditCidade.html",this.getServletContext().getRealPath(File.separator));
 	    	String html = fc.getFileFromDisk();
 
 	    	DAOcidade daocidade = new DAOcidade();
 	    	Cidade c =  daocidade.getCidadeById_pesssoa(Integer.parseInt(request.getParameter("idpessoa")));
-	    	System.out.println(c.toString());
 	    	html = html.replace("<%id_cidade%>",Integer.toString(c.getId_cidade()));
 	    	html = html.replace("<%nome_cidade%>",c.getNome());
 	    	html = html.replace("<%estado%>",c.getEstado());
@@ -100,20 +109,22 @@ public class EditarServelet extends HttpServlet {
 		PessoaController pc =  new PessoaController();
 		CidadeController cc =  new CidadeController();
 		Pessoa p = (Pessoa) request.getSession().getAttribute("pessoa");
-		
+		System.out.println(p.toString());
 		//pc.NovaPessoa(p);
-		p = pc.NovaPessoa(p);
+	   //p = pc.NovaPessoa(p);
+		pc.UpdatePessoa(p);
 		
 		Cidade cid = new Cidade();
-		cid.setNome(request.getParameter("nome"));
+		cid.setId_cidade(Integer.parseInt(request.getParameter("id_cidade")));
+		cid.setNome(request.getParameter("nome_cidade"));
 		cid.setEstado(request.getParameter("estado"));
 		cid.setId_pessoa(p.getId());
-		cc.AddCidade(cid);
+		//cc.AddCidade(cid);
+		cc.UpdateCidade(cid);
 		System.out.println(p.toString());
-		System.out.println(cid.toString());
-		System.out.println("bateu");
 		
 		// doGet(request, response);
+		response.sendRedirect("http://localhost:8080/CrudWed_1VAProgIII/SearchServelet");
 	}
 
 }
