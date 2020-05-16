@@ -8,7 +8,7 @@
 <center>
 
 		<h3>CrudWeb 1VA</h3>
-		<h1>Informações da Pessoa<%1>></h1>
+		<h1>Informações da Pessoa <%1%>  </h1>
 		<table style="border: 1px solid black;">
 			<thead>
 				<tr style="border: 1px solid black;">
@@ -25,7 +25,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<%%>
+				<%tabelaPessoa%>
 			</tbody>
 		</table>
 		
@@ -33,20 +33,25 @@
 		
 		
 		
-		<h1> Informações da Cidade De <%1%></h1>
+		<h1> Informações da Cidade De <%1%> </h1>
 		<table style="border: 1px solid black;">
 			<thead>
 				<tr style="border: 1px solid black;">
 					<th style="border: 1px solid black;">Id_Cidade</th>
-					<th style="border: 1px solid black;">Nome</th>
+					<th style="border: 1px solid black;">Nome_cidade</th>
 					<th style="border: 1px solid black;">Estado</th>
 				</tr>
 			</thead>
 			<tbody>
-				<%2%>
+				<%tabelaCidade%>
 			</tbody>
 		</table>
-		<br><br><input type="button" value="Voltar" onclick="window.location.href='http://localhost:8080/CrudWed_1VAProgIII/SearchServelet'" />
+		<br><br><input type="button" value="Cancelar" onclick="window.location.href='http://localhost:8080/CrudWed_1VAProgIII/SearchServelet'" />
+	    <form action="#?idpessoa=<%idpessoa%>" method = "POST" >
+		
+		<br><br><input type="submit" value="Confirmar" />
+		
+		</form>
 	</center>
 </body>
 </html>
