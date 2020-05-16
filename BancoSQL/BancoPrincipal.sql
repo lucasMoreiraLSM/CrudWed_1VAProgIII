@@ -1,4 +1,4 @@
-
+/*Tabela Principal PESSOA*/
 
 CREATE TABLE public.pessoa
 (
@@ -16,6 +16,8 @@ CREATE TABLE public.pessoa
   
   
 );
+
+/*Tabela Axuliar Cidade*/
 
 CREATE TABLE public.cidade
 (
